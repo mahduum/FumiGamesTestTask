@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d37b8ca846e7904cbb67cab5ace3db1, type: 3}
+  m_Name: PoisonAntidoteEffect
+  m_EditorClassIdentifier: 
+  ModifierInfos: []
+  AbilityActivationTag:
+    Name: AbilitySystem.Scripts.Abilities.NoneTag
+    SelectedIndex: 2
+  RequiredAbilityTags:
+  - Name: AbilitySystem.Scripts.Abilities.IsPoisonedTag
+    SelectedIndex: 1
+  AbilityTagsToRemove:
+  - Name: AbilitySystem.Scripts.Abilities.IsPoisonedTag
+    SelectedIndex: 1
+  DurationType: 0
+  Duration: 0
+  EffectCueType: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d37b8ca846e7904cbb67cab5ace3db1, type: 3}
+  m_Name: HealingEffectPlus30
+  m_EditorClassIdentifier: 
+  ModifierInfos:
+  - AbilityAttribute:
+      Name: AbilitySystem.Scripts.Attributes.HealthAttribute
+      SelectedIndex: 0
+    Magnitude: 30
+    Operation: 0
+    DurationOverride: 2
+  AbilityActivationTag:
+    Name: AbilitySystem.Scripts.Abilities.NoneTag
+    SelectedIndex: 2
+  RequiredAbilityTags: []
+  AbilityTagsToRemove: []
+  DurationType: 0
+  Duration: 0
+  EffectCueType: 0
