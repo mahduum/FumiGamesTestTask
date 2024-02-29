@@ -65,7 +65,7 @@ namespace RenderFeatures.Scripts
         {
             _renderPass = new RenderPass(_passMaterial)
             {
-                renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing
+                renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing
             };
             SetActive(false);
             SetIntensity(0);
