@@ -6,18 +6,17 @@ namespace InventorySystem
     [CreateAssetMenu(fileName = "InventoryChannel", menuName = "ScriptableObjects/InventoryChannel", order = 5)]
     public class InventoryChannel : ScriptableObject
     {
-        //todo this can be simplified to just one reactive delegate binding
-        public UnityAction<string, int> OnInventoryContentChanged;
-        public UnityAction<UnityAction<int>, Component> OnActiveItemChanged;
-
+        public UnityEvent<string, int> OnInventoryContentChanged;
+        public UnityEvent<int> OnActiveItemChanged;
+        
         public void RiseInventoryContentChanged(string itemName, int index)
         {
             OnInventoryContentChanged?.Invoke(itemName, index);
         }
-        
-        public void SubscribeToInventoryActiveItemChanged(UnityAction<int> actionIndex, Component subscriber)
+
+        public void RiseInventoryActiveItemChanged(int activeIndex)
         {
-            OnActiveItemChanged.Invoke(actionIndex, subscriber);
+            OnActiveItemChanged.Invoke(activeIndex);
         }
     }
 }

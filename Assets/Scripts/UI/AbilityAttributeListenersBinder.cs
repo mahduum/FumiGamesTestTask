@@ -26,7 +26,7 @@ namespace UI
                     .SubscribeToAttributeCurrentValueChanged(
                         binding.AttributeToListen.Name,
                         binding.AbilityAttributeValueProcessor.ProcessAbilityAttributeValue,
-                        binding.AbilityAttributeValueProcessor);
+                        binding.AbilityAttributeValueProcessor);//todo it should only need to take in processor interface but component is for UniRx
             }
         }
 

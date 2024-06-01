@@ -30,15 +30,15 @@ namespace AbilitySystem.Scripts
 
         private void Awake()
         {
-            _abilityAttributesChannel.OnSubsribe += SubscribeToAttributeCurrentValueChanged;
+            _abilityAttributesChannel.AddSubscriptionHandler(SubscribeToAttributeCurrentValueChanged);
         }
 
         private void OnDestroy()
         {
-            _abilityAttributesChannel.OnSubsribe -= SubscribeToAttributeCurrentValueChanged;
+            _abilityAttributesChannel.RemoveSubscriptionHandler(SubscribeToAttributeCurrentValueChanged);
         }
 
-        public void SubscribeToAttributeCurrentValueChanged(string attributeName, UnityAction<float> processAttributeEvent, Component subscriber)
+        private void SubscribeToAttributeCurrentValueChanged(string attributeName, UnityAction<float> processAttributeEvent, Component subscriber)
         {
             if (_attributeEvents.TryGetValue(attributeName, out var attributeEvent))
             {

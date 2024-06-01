@@ -39,23 +39,20 @@ namespace InventorySystem
 
             _activeItemIndex.Value = -1;
             ActiveItemIndex = new ReadOnlyReactiveProperty<int>(_activeItemIndex);
-            _inventoryChannel.OnActiveItemChanged += SubscribeToInventoryActiveItemChanged;
+            
+            _activeItemIndex.Subscribe(activeIndex =>
+            {
+                _inventoryChannel.RiseInventoryActiveItemChanged(activeIndex);
+            }).AddTo(this);
         }
 
         private void OnDestroy()
         {
-            _inventoryChannel.OnActiveItemChanged -= SubscribeToInventoryActiveItemChanged;
+            _inventoryChannel.OnInventoryContentChanged.RemoveAllListeners();
+            _inventoryChannel.OnActiveItemChanged.RemoveAllListeners();
         }
 
-        private void SubscribeToInventoryActiveItemChanged(UnityAction<int> action, Component subscriber)
-        {
-            _activeItemIndex.Subscribe(activeIndex =>
-            {
-                action?.Invoke(activeIndex);
-            }).AddTo(subscriber);
-        }
-
-        private void OnEnable()
+        private void OnEnable()//todo refactor bindings
         {
             _selectFirstItem.performed += SelectFirstItem;
             _selectSecondItem.performed += SelectSecondItem;

@@ -1,4 +1,5 @@
-﻿using InventorySystem;
+﻿using System;
+using InventorySystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,11 +21,17 @@ namespace UI
         
         private void Start()
         {
-            _inventoryChannel.SubscribeToInventoryActiveItemChanged(OnInventoryActiveItemChanged, this);
-            _inventoryChannel.OnInventoryContentChanged += OnInventoryContentChanged;
+            _inventoryChannel.OnActiveItemChanged.AddListener(OnInventoryActiveItemChanged);
+            _inventoryChannel.OnInventoryContentChanged.AddListener(OnInventoryContentChanged);
             _firstItemImage.color = _inactiveItemColor;
             _secondItemImage.color = _inactiveItemColor;
             _thirdItemImage.color = _inactiveItemColor;
+        }
+
+        private void OnDestroy()
+        {
+            _inventoryChannel.OnActiveItemChanged.RemoveListener(OnInventoryActiveItemChanged);
+            _inventoryChannel.OnInventoryContentChanged.RemoveListener(OnInventoryContentChanged);
         }
 
         private void OnInventoryActiveItemChanged(int activeIndex)//todo refactor
