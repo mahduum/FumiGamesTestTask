@@ -122,22 +122,21 @@ namespace InventorySystem
             }
             
             _abilitySystem.ApplyGameplayEffect(itemData._gameplayEffect);
-            Destroy(_inventory[_activeItemIndex.Value].pooled);
+            
+            Destroy(_inventory[_activeItemIndex.Value].pooled);//todo refactor to use new pool api
             _inventory[_activeItemIndex.Value] = (null, null);
 
             int firstValidIndex = -1;
             for (int i = 0; i < _inventory.Length; i++)
             {
-                if (_inventory[i].itemData != null)
+                if (_inventory[i].itemData != null)//todo change null to "is valid" or something like that
                 {
                     firstValidIndex = i;
                     break;
                 }
             }
-
-            string itemName = firstValidIndex >= 0 ? _inventory[firstValidIndex].itemData._name : string.Empty;
             
-            _inventoryChannel.RiseInventoryContentChanged(itemName, _activeItemIndex.Value);
+            _inventoryChannel.RiseInventoryContentChanged("", _activeItemIndex.Value);//todo this can also be set to container changed then it wouldn't need to be called explicitly
             _activeItemIndex.Value = firstValidIndex;
         }
     }

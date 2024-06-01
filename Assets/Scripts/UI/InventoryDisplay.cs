@@ -34,7 +34,7 @@ namespace UI
             _inventoryChannel.OnInventoryContentChanged.RemoveListener(OnInventoryContentChanged);
         }
 
-        private void OnInventoryActiveItemChanged(int activeIndex)//todo refactor
+        private void OnInventoryActiveItemChanged(int activeIndex)
         {
             _firstItemImage.color = activeIndex == 0 ? _activeItemColor : _inactiveItemColor;
             _secondItemImage.color = activeIndex == 1 ? _activeItemColor : _inactiveItemColor;
