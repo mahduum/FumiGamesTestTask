@@ -1,0 +1,37 @@
+:root {
+    background-color: cornflowerblue;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.first-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.second-row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+Label {
+    color: #F56354;
+}
+
+.aqua-boy, .ultra-boy {
+    flex: 0.5;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.aqua-boy {
+    background-color: aquamarine;
+}
+
+.ultra-boy {
+    background-color: blueviolet;
+}

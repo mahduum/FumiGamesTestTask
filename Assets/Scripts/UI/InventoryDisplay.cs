@@ -27,7 +27,7 @@ namespace UI
             _thirdItemImage.color = _inactiveItemColor;
         }
 
-        private void OnInventoryActiveItemChanged(int activeIndex)
+        private void OnInventoryActiveItemChanged(int activeIndex)//todo refactor
         {
             _firstItemImage.color = activeIndex == 0 ? _activeItemColor : _inactiveItemColor;
             _secondItemImage.color = activeIndex == 1 ? _activeItemColor : _inactiveItemColor;

@@ -1,0 +1,64 @@
+:root {
+    justify-content: center;
+    align-items: center;
+    --border-width: 4px;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.bordered-box {
+    border-width: var(--border-width);
+    border-radius: 15px;
+}
+
+.view-box {
+    border-color: mediumvioletred;
+    width: 400px;
+    height: 400px;
+}
+
+.control-box {
+    flex-direction: row;
+    align-items: center;
+    border-color: chartreuse;
+    margin-top: 10px;
+    width: 400px;
+    height: 100px;
+    padding: 5px;
+}
+
+.control-box Button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    border-width: var(--border-width);
+    border-color: whitesmoke;
+    transition: 0.25s all;
+}
+
+.control-box Button:hover {
+    background-color: #ff8c00;
+    border-radius: 10px;
+    scale: 1.1;
+}
+
+.control-box Slider {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.unity-base-slider__dragger {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    background-color: olivedrab;
+    border-width: var(--border-width);
+    border-color: white;
+    margin-top: -17px;
+}
+

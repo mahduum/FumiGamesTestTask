@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/TestButtonStyle.uss?fileID=7433441132597879392&amp;guid=1c1dcc1752fb9ba4bb5b046819ed864d&amp;type=3#TestButtonStyle" />
+    <ui:Label text="My Test Title" name="MyTitle" class="my-btn" />
+    <ui:Button text="Button" class="my-btn" />
+</ui:UXML>
