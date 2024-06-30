@@ -14,7 +14,7 @@ namespace AbilitySystem.Scripts.AttributeListeners
             //_abilityAttributesChannel.SubscribeToAttributeCurrentValueChanged();
         }
 
-        public override void ProcessAbilityAttributeValue(float currentValue)
+        public override void ProcessAbilityAttributeValue(float currentValue)//subscribe this way to UI doc property
         {
             _text.text = string.Format(_textFormat, currentValue);
         }

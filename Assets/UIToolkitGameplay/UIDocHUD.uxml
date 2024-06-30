@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(137, 33, 0, 0); height: 100%; width: 100%; flex-direction: column; flex-shrink: 1; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap; align-self: center;">
+        <ui:VisualElement name="Health" style="flex-grow: 1; background-color: rgb(0, 255, 212); justify-content: space-around; flex-direction: row; flex-shrink: 0; width: 40%; height: 50px; max-height: 50px; max-width: 100%; min-width: 40%; min-height: 30px; align-self: auto; align-items: center; font-size: 24px;">
+            <ui:Label text="Health: " name="HealthLabel" />
+            <ui:Label name="HealthValue" />
+        </ui:VisualElement>
+        <ui:Button text="Button" name="ButtonTest" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -10,7 +10,7 @@ namespace UI
     public class AttributeListenerBinding
     {
         public AbilityAttributeCreator AttributeToListen;
-        public AbilityAttributeValueProcessorBase AbilityAttributeValueProcessor;//i.e. object with text component
+        public AbilityAttributeValueProcessorBase AbilityAttributeValueProcessor;//i.e. object with text component//todo with UI Doc here enough is just the name of the property
     }
     
     public class AbilityAttributeListenersBinder : MonoBehaviour
